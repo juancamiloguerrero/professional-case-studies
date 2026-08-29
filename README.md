@@ -1,6 +1,14 @@
-# Professional Case Studies
+<p align="center">
+  <img
+    src="./assets/banner-professional-case-studies.png"
+    alt="Professional Case Studies - Enterprise Software, Backend, Security and Automation"
+    width="100%"
+  />
+</p>
 
-Anonymized technical case studies from professional software projects I have worked on as a **Full Stack Developer**.
+<p align="center">
+  Anonymized technical case studies from professional software projects I have worked on as a <strong>Full Stack Developer</strong>.
+</p>
 
 Most of my current engineering work lives in private repositories. This repository explains the **context, my contribution, technical decisions, outcomes and lessons learned** without exposing proprietary source code, client identities, infrastructure details or sensitive data.
 
