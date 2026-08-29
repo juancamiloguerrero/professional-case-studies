@@ -1,9 +1,12 @@
 # Financial Applications Platform
 
-**Domain:** Fintech / financial operations  
-**Type of work:** Product transformation and reengineering  
-**Repository:** Private  
-**Role:** Full Stack Developer
+| | |
+| --- | --- |
+| **Domain** | Fintech / financial operations |
+| **Role** | Full Stack Developer |
+| **Work type** | Product transformation and reengineering |
+| **Focus** | Domain migration · Documents · Business rules · Security |
+| **Repository** | Private |
 
 ## Context
 
@@ -27,6 +30,32 @@ My work has included:
 - improving authentication, authorization and application security;
 - progressively removing assumptions tied to the original legal domain.
 
+## Product evidence
+
+### Operational dashboard
+
+<p align="center">
+  <img src="../assets/financial-applications-platform/dashboard.webp" alt="Financial applications operational dashboard with identifying data redacted" width="100%">
+</p>
+
+The dashboard summarizes application states and pending analysis, giving operational users a quick view of the current portfolio.
+
+### Application lifecycle
+
+<p align="center">
+  <img src="../assets/financial-applications-platform/applications-list.webp" alt="Financial applications list with personal information redacted" width="100%">
+</p>
+
+Applications are tracked through explicit states and validity periods, making overdue or rejected items immediately visible.
+
+### Assisted analysis and validations
+
+<p align="center">
+  <img src="../assets/financial-applications-platform/application-analysis.webp" alt="Assisted financial analysis and validation workflow with personal information redacted" width="100%">
+</p>
+
+The system combines document-derived information, backend calculations and external validations while preserving a human-review step before consequential decisions.
+
 ## Simplified flow
 
 ```mermaid
@@ -39,28 +68,24 @@ flowchart LR
     H --> S[Application state]
 ```
 
-The actual implementation contains additional flows and integrations that are not shown for confidentiality reasons.
-
 ## Product transformation
 
 The most relevant engineering challenge is that the platform was **not originally designed for its current purpose**.
 
-That means each change requires distinguishing between:
+Each change requires distinguishing between:
 
 - reusable infrastructure;
-- legal-domain assumptions that should be removed;
+- legal-domain assumptions that should disappear;
 - models that can be adapted;
-- flows that need to be redesigned;
-- terminology that no longer represents the business;
-- security expectations for the new context.
-
-This kind of work requires understanding the existing system deeply enough to evolve it without carrying unnecessary legacy behavior into the new product.
+- flows that need redesign;
+- terminology that no longer represents the product;
+- security expectations for the new financial context.
 
 ## Document processing
 
 The application includes automated processing of financial documents to extract structured information that can later be evaluated by backend rules.
 
-Where AI-assisted extraction is used, it is treated as part of a wider process rather than as an autonomous decision-maker.
+Where AI-assisted extraction is used, it is one part of a wider process rather than an autonomous decision-maker.
 
 ```mermaid
 flowchart TD
@@ -73,11 +98,9 @@ flowchart TD
     Q -->|No| C[Continue workflow]
 ```
 
-This separation is important because extracted information and final business decisions are different concerns.
-
 ## Security work
 
-Because the platform handles financial workflows and documents, I have also worked on security-related improvements, including:
+Because the platform handles financial workflows and documents, I have also worked on:
 
 - authentication and authorization;
 - validation of incoming data;
@@ -90,15 +113,25 @@ Because the platform handles financial workflows and documents, I have also work
 
 `Node.js` · `Express.js` · `MongoDB` · `Mongoose` · `EJS` · `REST APIs` · `Gemini` · `Puppeteer` · `Socket.IO` · `S3-compatible storage` · `ExcelJS`
 
+## Outcome
+
+The existing codebase has been able to **move progressively away from its original legal-domain assumptions and toward a financial application workflow** without requiring a complete rewrite.
+
+The product now supports clearer application-state management, document-oriented analysis, automated validations and assisted analysis while keeping human review in the loop.
+
 ## What this project demonstrates
 
 - Reengineering an existing product for a different industry.
 - Working with legacy assumptions instead of starting from a blank repository.
 - Designing document-oriented backend workflows.
-- Combining automated extraction with deterministic business logic and human review.
-- Maintaining security while the system is being transformed.
-- Converting changing business requirements into an evolving software product.
+- Combining automated extraction with deterministic business logic.
+- Preserving human review for consequential decisions.
+- Maintaining security while a product is being transformed.
 
 ## Confidentiality
 
-The original product name, financial entity, internal rules, documents, customer information, infrastructure details and proprietary source code are intentionally excluded.
+The original product name, financial entity, applicant information, internal rules, documents, infrastructure details and proprietary code are intentionally excluded.
+
+---
+
+**Navigation:** [← Concurrent Hospital Auditing](./concurrent-hospital-auditing.md) · [Overview](../README.md) · [Next: Clinical Record Auditing →](./clinical-record-auditing.md)

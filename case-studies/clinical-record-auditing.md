@@ -1,15 +1,18 @@
 # Clinical Record Auditing
 
-**Domain:** Healthtech  
-**Type of work:** Application security and hardening  
-**Repository:** Private  
-**Role:** Full Stack Developer
+| | |
+| --- | --- |
+| **Domain** | Healthtech |
+| **Role** | Full Stack Developer |
+| **Work type** | Application security and hardening |
+| **Focus** | Authentication · Token handling · HTTP security |
+| **Repository** | Private |
 
 ## Context
 
 This application supports the evaluation and auditing of clinical records.
 
-My contribution to this project has been focused primarily on **application security**, rather than claiming ownership of the platform as a whole.
+My contribution to this project has been focused primarily on **application security**, rather than ownership of the platform as a whole.
 
 ## My contribution
 
@@ -22,7 +25,17 @@ The work included:
 - reducing avoidable information exposure;
 - reviewing application surfaces that could be hardened.
 
-One of the tools used during this process was [SecurityHeaders.com](https://securityheaders.com/) to identify missing or weak HTTP security policies.
+One of the external tools used during this process was [SecurityHeaders.com](https://securityheaders.com/) to identify missing or weak HTTP security policies.
+
+## Evidence
+
+### Sanitized HTTP security assessment
+
+<p align="center">
+  <img src="../assets/clinical-record-auditing/security-headers.webp" alt="Sanitized Security Headers assessment for the clinical record auditing application" width="100%">
+</p>
+
+A post-hardening scan returned an **A grade** while still identifying follow-up opportunities. The image is intentionally sanitized so the host, IP address and private infrastructure are not exposed.
 
 ## Why tokens in URLs are risky
 
@@ -58,7 +71,7 @@ The exact authentication implementation is intentionally not documented.
 
 The project also involved reviewing browser-facing security policies and improving the application's HTTP security posture.
 
-Examples of the types of controls evaluated during hardening include:
+Examples of the types of controls evaluated include:
 
 - Content Security Policy;
 - transport security;
@@ -67,20 +80,30 @@ Examples of the types of controls evaluated during hardening include:
 - referrer behavior;
 - permissions policies.
 
-Only controls actually appropriate for the application should be enabled; security headers should not be copied blindly without considering application behavior.
+Security headers should not be copied blindly; each policy must be compatible with the application's real behavior.
 
 ## Technologies
 
 `Next.js` · `React` · `TypeScript` · `Node.js` · `Express.js` · `MongoDB` · `JWT` · `Helmet`
 
+## Outcome
+
+The authentication flow no longer relies on exposing the token through the URL, reducing avoidable leakage through browser history, logs, copied links and related channels.
+
+The application also gained a stronger browser-facing HTTP security configuration. An external scan provides visible evidence of that hardening without exposing the underlying implementation.
+
 ## What this project demonstrates
 
-- Security work on an existing production-oriented application.
+- Security work on an existing application.
 - Identifying exposure created by authentication design choices.
-- Improving security without claiming to have built the entire product.
-- Using automated security feedback as input, then validating changes against application behavior.
-- Treating browser and HTTP configuration as part of application security.
+- Improving security without claiming ownership of the full product.
+- Using automated security feedback as input and validating changes against application behavior.
+- Treating HTTP configuration as part of application security.
 
 ## Confidentiality
 
-Authentication implementation details, vulnerabilities, infrastructure, client information, clinical data and proprietary code are intentionally excluded.
+Authentication implementation details, vulnerabilities, infrastructure, client information, clinical data and proprietary source code are intentionally excluded.
+
+---
+
+**Navigation:** [← Financial Applications Platform](./financial-applications-platform.md) · [Overview](../README.md) · [Next: Clinical Research Management →](./clinical-research-management.md)
